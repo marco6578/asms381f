@@ -1,0 +1,58 @@
+<html>
+<body>
+<ul>
+<H2>Restaurant Details</H2><hr>
+<p>Restaurant ID: <b><%=restaurants.restaurant_id%></b></p>
+<p>name: <b><%=restaurants.name%></b></p>
+
+<H4>address</H4>
+<p>building: <b><%=restaurants.address[0].building%></b></p>
+
+
+<form action="/leaflet"  method="post" >
+  <p>
+  <input name="x" type="text" value="<%=restaurants.address[0].x%>">
+  <label>coord x: <%=restaurants.address[0].x%></label></p>
+  <p>
+  <input name="y" type="text" value="<%=restaurants.address[0].y%>">
+  <label>coord y: <%=restaurants.address[0].y%></label></p>
+<input type="submit" value="Map"></p>
+
+</form>
+
+
+
+<p>street: <b><%=restaurants.address[0].street%></b></p>
+<p>zipcode: <b><%=restaurants.address[0].zipcode%></b></p>
+
+<p>borough: <b><%=restaurants.borough%></b></p>
+<p>cuisine: <b><%=restaurants.cuisine%></b></p>
+
+<H4>grades</H4>
+
+<p>score: <b><%=restaurants.grades[0].score%></b></p>
+<p>user: <b><%=restaurants.grades[0].user%></b></p>
+
+
+
+
+<form action="/delete"  method="post" >
+<input type="text" name=r_id value="<%=restaurants.restaurant_id%>">
+<input type="submit" value="delete">
+</form>
+
+<form action="/update_page"  method="post" >
+<input type="text" name=r_id value="<%=restaurants.restaurant_id%>">
+<input type="submit" value="update">
+</form>
+
+<form action="/rating"  method="post" >
+<input type="text" name=r_id value="<%=restaurants.restaurant_id%>">
+<input type="submit" value="rate">
+</form>
+
+<a href='/search'>back</a>
+<a href='/'>Home</a>
+<a href='/logout'>Logout</a>
+</body>
+</html>

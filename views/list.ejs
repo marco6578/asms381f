@@ -1,0 +1,16 @@
+<html>
+  <body>
+     <H2>Restaurant Numbers <%=itlength%></H2>
+    <ul>
+
+            <% for (var it of items) { %>
+            <li>Restaurant name: <a href="/details?_id=<%= it._id %>"><%= it.name %></a></li>
+           <%  } %>
+        </li>
+       </ul>
+
+<a href='/search'>back</a>
+<a href='/'>Home</a>
+<a href='/logout'>Logout</a>
+  </body>
+</html>
